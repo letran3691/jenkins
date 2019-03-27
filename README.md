@@ -24,7 +24,8 @@ yum install jenkins
 
 vi /etc/sysconfig/jenkins
 
-https://github.com/letran3691/shell/blob/master/Selection_028.png
+![Selection_028](https://user-images.githubusercontent.com/19284401/55050746-dfabe380-5084-11e9-9ead-230bdc0b52bb.png)
+
 
 - start và enable jenkins
 
