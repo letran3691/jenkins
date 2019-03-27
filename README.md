@@ -190,7 +190,7 @@ Trong phần Shell mình thực hiện 2 lệnh đơn giản.
 
     touch jenkins.txt (tạo ra file jenkins.txt)
 
-    ls $WORKSPACE       (hiển thị nội trong trong thư mục $WORKSPACE  )
+    ls $WORKSPACE     (hiển thị nội trong trong thư mục $WORKSPACE  )
 
 vì sao lại có  $WORKSPACE, bạn có thể xem trong **See the list of available environment variables** ngay phía dưới phần command
 ![Selection_047](https://user-images.githubusercontent.com/19284401/55059196-f3fdd980-50a0-11e9-8ac8-714044e18ea3.png)
@@ -219,7 +219,7 @@ _Giờ chúng ta nâng cao lên 1 chút đó là cấu hình buil và deploy t�
 
 **6.1 Cấu hình phần Alert mail**
 
-    Cách cài đặt mình đã hướng dẫn ở trên.
+   - Cách cài đặt mình đã hướng dẫn ở trên.
 
 - Tại menu chính Manage Jenkins >> Configure System >> Extended E-mail Notification
 
@@ -295,9 +295,9 @@ Vậy là cấu hình xong alertmail và SSH
 **Source Code Management**
     ![Selection_017](https://user-images.githubusercontent.com/19284401/55068429-662be980-50b4-11e9-8c5f-27b88ae6de10.png)
 
-    Repository URL: là địa cảu git server bạn muốn pull (để đây mình dùng clone qua ssh nên sẽ cấu hình Credentials, nếu bạn clone từ http thì ko cần)
+   - Repository URL: là địa cảu git server bạn muốn pull (để đây mình dùng clone qua ssh nên sẽ cấu hình Credentials, nếu bạn clone từ http thì ko cần)
 
-    Branch Specifier (blank for 'any') : $BUILD gọi đển biến **Name** bạn vừa đặt ở phần **git Parameter**
+   - Branch Specifier (blank for 'any') : $BUILD gọi đển biến **Name** bạn vừa đặt ở phần **git Parameter**
 
 **Build Triggers**
 
@@ -352,7 +352,7 @@ Tìm đến **Triggers** bên góc trái chọn **Add Trigger** chọn tiếp **
 
 - Cuối cùng là **SAVE**
 
-    Vậy là đã cấu hình hoàn tất giờ chạy buil để test thành quả thôi. :D
+ Vậy là đã cấu hình hoàn tất giờ chạy buil để test thành quả thôi. :D
 
 
 - Tài liệu tham khảo: https://vi.wikipedia.org/wiki/Jenkins_(ph%E1%BA%A7n_m%E1%BB%81m)
