@@ -46,23 +46,23 @@
 
 - Trước khi cài jenkin, cần phải cài java vì jenkins chạy trên nên java
 
-    yum install java-1.8.0-openjdk-devel
+        yum install java-1.8.0-openjdk-devel
 
 - Enable jenkins repo và import GPG key sử dụng lệnh curl
 
-    curl --silent --location http://pkg.jenkins-ci.org/redhat-stable/jenkins.repo | sudo tee /etc/yum.repos.d/jenkins.repo
+        curl --silent --location http://pkg.jenkins-ci.org/redhat-stable/jenkins.repo | sudo tee /etc/yum.repos.d/jenkins.repo
 
 - Add repo vào hệ thống
 
-    rpm --import https://jenkins-ci.org/redhat/jenkins-ci.org.key
+        rpm --import https://jenkins-ci.org/redhat/jenkins-ci.org.key
 
 - Install jenkins
 
-    yum install jenkins
+        yum install jenkins
 
 - Sau khi cài đặt xong, nếu muốn thay đổi thư mục home mặc định của jenken cần chỉnh lại file config
 
-    vi /etc/sysconfig/jenkins
+        vi /etc/sysconfig/jenkins
 
 
 ![Selection_029](https://user-images.githubusercontent.com/19284401/55050886-90b27e00-5085-11e9-87c3-b345adddaae0.png)
@@ -73,23 +73,23 @@ Thay vào đó là thư mục mới VD: JENKINS_HOME="/data" (hãy chắc chắn
 
 - start và enable jenkins
 
-    systemctl start jenkins && systemctl enable jenkins
+        systemctl start jenkins && systemctl enable jenkins
 
 
 - reboot lại hệ thống
 
-    reboot 
+        reboot 
 
 - Nếu firewall của bạn đang bật thì hãy mở port bằng lệnh sau.
 
-    firewall-cmd --permanent --zone=public --add-port=8080/tcp
+        firewall-cmd --permanent --zone=public --add-port=8080/tcp
 
-    firewall-cmd --reload
+        firewall-cmd --reload
 
 
 - **SETUP JENKINS**
 
-    http://your_ip_or_domain:8080
+        http://your_ip_or_domain:8080
    
 
 Bạn sẽ có 1 giao diện web như hình.
@@ -97,9 +97,9 @@ Bạn sẽ có 1 giao diện web như hình.
 ![unlock-jenkins](https://user-images.githubusercontent.com/19284401/55051106-6a411280-5086-11e9-90c2-e136df1de87d.jpg)
 
 
-Lấy password jenkins random để đăng nhập
+- Lấy password jenkins random để đăng nhập
 
-    cat /var/lib/jenkins/secrets/initialAdminPassword
+        cat /var/lib/jenkins/secrets/initialAdminPassword
 
 
 ![Selection_031](https://user-images.githubusercontent.com/19284401/55052575-0cafc480-508c-11e9-9f24-ca4b3518d6eb.png)
@@ -132,7 +132,7 @@ Quá trình cài đặt jenkins đã hoàn tất.
     Promoted Builds (dùng để đánh dấu các phiên bản buil khá có ích khi muốn revert lại các bạn build)
 
 
-   http://jenkins.local:8080/pluginManager/
+    http://jenkins.local:8080/pluginManager/
    
 ![Selection_036](https://user-images.githubusercontent.com/19284401/55053480-e17aa480-508e-11e9-9256-0a0a842988ac.png)
 
@@ -166,7 +166,7 @@ Chọn yes
 
 **5 Tạo và cấu hình Job**
 
-- Từ menu chính chọn **New Item**
+   - Từ menu chính chọn **New Item**
 
 ![Selection_039](https://user-images.githubusercontent.com/19284401/55057833-eb0b0900-509c-11e9-8619-4323c67b319a.png)
 
@@ -176,7 +176,7 @@ Nhập tên cho jobs và chọn type rồi click ok
 
 ![Selection_041](https://user-images.githubusercontent.com/19284401/55057885-0f66e580-509d-11e9-8c26-a01e146181e7.png)
 
-Tab general
+- Tab general
 
 Như đã nói ở trên phần này mình sẽ nhắc đền **Project role**
 
@@ -186,7 +186,7 @@ Như đã nói ở trên phần này mình sẽ nhắc đền **Project role**
 
 Như trong hình mình đã add user 1 và cho user này có quyền buil cancel và workspace (tạo tác với thư mục workspacs)
 
-Click vào Add buil step chọn Execute Shell
+- Click vào Add buil step chọn Execute Shell
 
 ![Selection_045](https://user-images.githubusercontent.com/19284401/55058853-d7ad6d00-509f-11e9-82f0-8309ce044333.png)
 
@@ -201,7 +201,7 @@ Trong phần Shell mình thực hiện 2 lệnh đơn giản.
 vì sao lại có  $WORKSPACE, bạn có thể xem trong **See the list of available environment variables** ngay phía dưới phần command
 ![Selection_047](https://user-images.githubusercontent.com/19284401/55059196-f3fdd980-50a0-11e9-8ac8-714044e18ea3.png)
 
-Click save 
+- Click save 
 
 Công việc tạo jobs đã xong
 
@@ -213,7 +213,7 @@ Kết quả
 
 Như vậy là build thành công.
 
-Giờ chúng ta nâng cao lên 1 chút đó là cấu hình buil và deploy từ github
+_Giờ chúng ta nâng cao lên 1 chút đó là cấu hình buil và deploy từ github_
 
 **6 + 7 + 8 Kết hợp Jenkins với GIT && Automated Deployment && alert mail**
 
@@ -227,7 +227,7 @@ Giờ chúng ta nâng cao lên 1 chút đó là cấu hình buil và deploy từ
 
     Cách cài đặt mình đã hướng dẫn ở trên.
 
-Tại menu chính Manage Jenkins >> Configure System >> Extended E-mail Notification
+- Tại menu chính Manage Jenkins >> Configure System >> Extended E-mail Notification
 
 ![Selection_011](https://user-images.githubusercontent.com/19284401/55066238-f287dd80-50af-11e9-9dcb-f27671791021.png)
 
@@ -251,9 +251,9 @@ Tại menu chính Manage Jenkins >> Configure System >> Extended E-mail Notifica
 
 - Cấu hình Publish over SSH  để deploy lên server.
 
-        Tại phần SSH Servers
+     - Tại phần SSH Servers
 
-        Nhập các thông tin của server cần deploy
+     - Nhập các thông tin của server cần deploy
 
 ![Selection_012](https://user-images.githubusercontent.com/19284401/55067039-90c87300-50b1-11e9-87b7-ada52e78d7a0.png)
 
@@ -281,7 +281,7 @@ Sau khi cấu hình xong hãy click vào **test config**  ở góc bên phải. 
 
 ![Selection_013](https://user-images.githubusercontent.com/19284401/55067836-07b23b80-50b3-11e9-93cf-0e35a7e697ed.png)
 
-Cuối cùng là **SAVE** 
+- Cuối cùng là **SAVE** 
 
 Vậy là cấu hình xong alertmail và SSH
 
@@ -289,7 +289,7 @@ Vậy là cấu hình xong alertmail và SSH
 
 ![Selection_014](https://user-images.githubusercontent.com/19284401/55068094-96bf5380-50b3-11e9-9841-85546f76b6ca.png)
 
-- Add Parameter >> git Parameter 
+  - Add Parameter >> git Parameter 
 
 ![Selection_015](https://user-images.githubusercontent.com/19284401/55068241-f3227300-50b3-11e9-8dc1-5449a3323e08.png)
 
@@ -317,54 +317,52 @@ Vậy là cấu hình xong alertmail và SSH
 
        https://dzone.com/articles/adding-a-github-webhook-in-your-jenkins-pipeline
 
-
-
 **Build Environment**
 
 - Send files or execute commands over SSH before the build starts 
 
 - Send files or execute commands over SSH after the build runs
 
-    Tên của 2 tùy chọn này cũng đã nói lên cách nó làm việc rồi
+   -  Tên của 2 tùy chọn này cũng đã nói lên cách nó làm việc rồi
 
-    Gửi file hoặc thực hiện lên shell trước khi build. tức là lệnh shell sẽ được thực thi trước khi clone code từ gitserver về và ngược lại
+    - Gửi file hoặc thực hiện lên shell trước khi build. tức là lệnh shell sẽ được thực thi trước khi clone code từ gitserver về và ngược lại
 
 
 ![Selection_019](https://user-images.githubusercontent.com/19284401/55068912-72647680-50b5-11e9-9b2f-59e5e86219c5.png)
 
-**SSH Publishers**
+- **SSH Publishers**
 
-- SSH server sẽ list và các server ssh mà bạn đã cấu hình trong phần **Publish over SSH** ở trên. nếu bạn cấu hình nhiều server ssh thì hãy chọn chính xác.
+  - SSH server sẽ list và các server ssh mà bạn đã cấu hình trong phần **Publish over SSH** ở trên. nếu bạn cấu hình nhiều server ssh thì hãy chọn chính xác.
 
-- Transfers Source files: là thư mục chứa code clone từ git về mặc địn là **workspace** (các bạn có thể tìm hiểu thêm về workspaces tại http://jenkins.local:8080/env-vars.html/ )
+  - Transfers Source files: là thư mục chứa code clone từ git về mặc địn là **workspace** (các bạn có thể tìm hiểu thêm về workspaces tại http://jenkins.local:8080/env-vars.html/ )
 
-- Remote directory: là thư mục bạn đã cấu hình ở phần **Publish over SSH**
+  - Remote directory: là thư mục bạn đã cấu hình ở phần **Publish over SSH**
 
-- Exec command : thực hiện lệnh shell gì đó. VD ở đây show ra nội dung của thư mục Remote directory chính /producs/hanv
+  - Exec command : thực hiện lệnh shell gì đó. VD ở đây show ra nội dung của thư mục Remote directory chính /producs/hanv
 
-**Post-build Actions**
+- **Post-build Actions**
 
-    Chọn Editable Email notification
+   Chọn Editable Email notification
 
 ![Selection_022](https://user-images.githubusercontent.com/19284401/55070592-316e6100-50b9-11e9-8d61-5bd50502f31e.png)
 
 
-    Project Recipient List : nhập vào địa chỉ email nhập thông báo sau khi build
+   - Project Recipient List : nhập vào địa chỉ email nhập thông báo sau khi build
 
-    Attach Build Log : chọn Attach Build Log để đính kèm chi tiết log quá trình build và deploy.
+   - Attach Build Log : chọn Attach Build Log để đính kèm chi tiết log quá trình build và deploy.
 
-- Click vào **Advance Setting** bên góc phải 
+   - Click vào **Advance Setting** bên góc phải 
 
 Tìm đến **Triggers** bên góc trái chọn **Add Trigger** chọn tiếp **Always** xóa **Developer** đi chỉ để **Recipient list**
 
 ![Selection_021](https://user-images.githubusercontent.com/19284401/55070352-a42b0c80-50b8-11e9-80e1-59e579cc157a.png)
 
-Cuối cùng là **SAVE**
+- Cuối cùng là **SAVE**
 
-Vậy là đã cấu hình hoàn tất giờ chạy buil để test thành quả thôi. :D
+    Vậy là đã cấu hình hoàn tất giờ chạy buil để test thành quả thôi. :D
 
 
-Tài liệu tham khảo: https://vi.wikipedia.org/wiki/Jenkins_(ph%E1%BA%A7n_m%E1%BB%81m)
+- Tài liệu tham khảo: https://vi.wikipedia.org/wiki/Jenkins_(ph%E1%BA%A7n_m%E1%BB%81m)
 
 
 
