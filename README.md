@@ -25,6 +25,7 @@ Việc kích hoạt build dự án phần mềm bằng Jenkins có thể đượ
 **2 cài đặt jenkins centos7**
 
 Prerequisites
+
 Minimum hardware requirements:
 
 256 MB of RAM
@@ -324,7 +325,7 @@ Send files or execute commands over SSH before the build starts
 
 Send files or execute commands over SSH after the build runs
 
-Tên cảu 2 tùy chọn này cũng đã nói lên các nó làm việc rồi
+Tên của 2 tùy chọn này cũng đã nói lên cách nó làm việc rồi
 
 gửi file hoặc thực hiện lên shell trước khi build. tức là lệnh shell sẽ được thực thi trước khi clone code từ gitserver về và ngược lại
 
