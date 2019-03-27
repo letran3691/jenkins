@@ -8,11 +8,8 @@
 
 5 Tạo và cấu hình Job
 
-6 Kết hợp Jenkins với GIT
+6 Kết hợp Jenkins với GIT Automated Deployment Alert mail
 
-7 Automated Deployment
-
-8 Alert mail
 
 **1 Tổng quan jenkins**
 
@@ -212,7 +209,7 @@ Như vậy là build thành công.
 
 _Giờ chúng ta nâng cao lên 1 chút đó là cấu hình buil và deploy từ github_
 
-**6 + 7 + 8 Kết hợp Jenkins với GIT && Automated Deployment && alert mail**
+****6  Kết hợp Jenkins với GIT && Automated Deployment && Alert mail****
 
 - Trước khi bắt đầu bạn cần cài đặt
 
@@ -220,7 +217,7 @@ _Giờ chúng ta nâng cao lên 1 chút đó là cấu hình buil và deploy t�
 
 - Cài đặt plugin Publish over SSH 
 
-- Cấu hình phần alert mail
+**6.1 Cấu hình phần Alert mail**
 
     Cách cài đặt mình đã hướng dẫn ở trên.
 
@@ -229,51 +226,51 @@ _Giờ chúng ta nâng cao lên 1 chút đó là cấu hình buil và deploy t�
 ![Selection_011](https://user-images.githubusercontent.com/19284401/55066238-f287dd80-50af-11e9-9dcb-f27671791021.png)
 
 
-    SMTP server : server mail
+   - SMTP server : server mail
 
-    Default user E-mail suffix : dạng tên miền của mail
+   - Default user E-mail suffix : dạng tên miền của mail
 
-    Tích vào use SMTP Auth 
+   - Tích vào use SMTP Auth 
 
-    User Name: địa chị mail
+   - User Name: địa chị mail
 
-    Password: mật khẩu mail
+   - Password: mật khẩu mail
 
-    reply to list: nhập lại địa chị mail ở trên.
+   - Reply to list: nhập lại địa chị mail ở trên.
 
 
 **Chú ý:** nếu ban dùng gmail hoặc gsuite thì hãy cho phép tài khoản đăng nhập vào ứng dụng kém an toàn
 
-    Cuộn chuột xuống cuối tìm đến phần  **Publish over SSH**
+   - Cuộn chuột xuống cuối tìm đến phần  **Publish over SSH**
 
-- Cấu hình Publish over SSH  để deploy lên server.
+**6.2 Cấu hình Publish over SSH  để deploy lên server.**
 
-     - Tại phần SSH Servers
+   - Tại phần SSH Servers
 
-     - Nhập các thông tin của server cần deploy
+   - Nhập các thông tin của server cần deploy
 
 ![Selection_012](https://user-images.githubusercontent.com/19284401/55067039-90c87300-50b1-11e9-87b7-ada52e78d7a0.png)
 
 
-    Name: bạn nhập gì cũng được (để gợi nhớ đến server)
+   - Name: bạn nhập gì cũng được (để gợi nhớ đến server)
 
-    Hostname: nhập ip hoặc hostname
+   - Hostname: nhập ip hoặc hostname
 
-    Username: mặc định là jenkins (hãy chắc chắn rằng user jenkins đã được tạo ở server ssh)
+   - Username: mặc định là jenkins (hãy chắc chắn rằng user jenkins đã được tạo ở server ssh)
 
-    Remote Diretory: đây là nơi jenkins sẽ deply code (hãy chắc chắn server ssh có thư mục này)
+   - Remote Diretory: đây là nơi jenkins sẽ deply code (hãy chắc chắn server ssh có thư mục này)
 
-    Tích Use password authentication, or use a different key
+   - Tích Use password authentication, or use a different key
 
-    Patch to key là đường dẫn đề file key ssh private
+   - Patch to key là đường dẫn đề file key ssh private
 
-    /var/lib/jenkins đây là thư mục home mặc địch của jenkins
+   - /var/lib/jenkins đây là thư mục home mặc địch của jenkins
 
-    /.ssh/id_rsa.ppk thư mục .ssh là mình tạo ra để cấu hình cho dễ quản lý
+   - /.ssh/id_rsa.ppk thư mục .ssh là mình tạo ra để cấu hình cho dễ quản lý
 
 Nếu bạn ko muốn phúc phạp vấn đề bạn có thể paste trực tiếp key private và mục **Key** ngay bên dưới patch to key
 
-Sau khi cấu hình xong hãy click vào **test config**  ở góc bên phải. nếu có thông báo **success** thì cấu hình xong. nếu ngược lại thì các bạn biết phải làm gì rồi đó :D
+Sau khi cấu hình xong hãy click vào **Test Config**  ở góc bên phải. nếu có thông báo **success** thì cấu hình xong. nếu ngược lại thì các bạn biết phải làm gì rồi đó :D
 
 
 ![Selection_013](https://user-images.githubusercontent.com/19284401/55067836-07b23b80-50b3-11e9-93cf-0e35a7e697ed.png)
@@ -282,7 +279,7 @@ Sau khi cấu hình xong hãy click vào **test config**  ở góc bên phải. 
 
 Vậy là cấu hình xong alertmail và SSH
 
-- Giờ đến cấu hình jobs
+**6.3 Giờ đến cấu hình jobs**
 
 ![Selection_014](https://user-images.githubusercontent.com/19284401/55068094-96bf5380-50b3-11e9-9841-85546f76b6ca.png)
 
@@ -291,9 +288,9 @@ Vậy là cấu hình xong alertmail và SSH
 ![Selection_015](https://user-images.githubusercontent.com/19284401/55068241-f3227300-50b3-11e9-8dc1-5449a3323e08.png)
 
 
-    Name: nhập bất cứ cái gì bạn muốn
+   - Name: nhập bất cứ cái gì bạn muốn
  
-    Parameter Type: sẽ buil từ branch (mặc định là master nếu git của bạn cảu nhiều brach)
+   - Parameter Type: sẽ buil từ branch (mặc định là master nếu git của bạn cảu nhiều brach)
  
 **Source Code Management**
     ![Selection_017](https://user-images.githubusercontent.com/19284401/55068429-662be980-50b4-11e9-8c5f-27b88ae6de10.png)
@@ -306,7 +303,7 @@ Vậy là cấu hình xong alertmail và SSH
 
 ![Selection_018](https://user-images.githubusercontent.com/19284401/55068677-f66a2e80-50b4-11e9-8376-9c4e27908dca.png)
 
-    Build when a change is pushed to BitBucket. ý nghĩ của nó là mỗi khi có commit thì jenkins sẽ từ động buil và deploy
+   - Build when a change is pushed to BitBucket. ý nghĩ của nó là mỗi khi có commit thì jenkins sẽ từ động buil và deploy
 
 **_chú ý: muốn sử dụng tính này năng thì bạn cần cấu hình webhook trên github và server jenkins của bạn phải được public ra ngoài.**_
 
@@ -339,10 +336,9 @@ Vậy là cấu hình xong alertmail và SSH
 
 - **Post-build Actions**
 
-   Chọn Editable Email notification
+   - Chọn Editable Email notification
 
 ![Selection_022](https://user-images.githubusercontent.com/19284401/55070592-316e6100-50b9-11e9-8d61-5bd50502f31e.png)
-
 
    - Project Recipient List : nhập vào địa chỉ email nhập thông báo sau khi build
 
