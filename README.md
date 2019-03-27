@@ -16,10 +16,34 @@
 
 **1 Tổng quan jenkins**
 
-jenkins là một máy chủ tích hợp liên tục có thể mở rộng. Nó build và test phần mềm của bạn một cách liên tục và theo dõi sự thi hành và trạng thái của các jobs. Nó giúp cho DEV và SA thường xuyên có được code chạy ổn định
+Jenkins là một phần mềm tự động hóa, mã nguồn mở và viết bằng Java. Dự án được tách ra từ dự án ban đầu là Hudson, sau khi xảy ra sự tranh chấp với Oracle.
 
+Jenkins giúp tự động hóa các quy trình trong phát triển phần mềm, hiện nay được gọi theo thuật ngữ Tích hợp liên tục, và còn được dùng đến trong việc Phân phối liên tục. Jenkins là một phần mềm dạng server, chạy trên nền servlet với sự hỗ trợ của Apache Tomcat. Nó hỗ trợ hầu hết các phần mềm quản lý mã nguồn phổ biến hiện nay như Git, Subversion, Mercurial, ClearCase... Jenkins cũng hỗ trợ cả các mã lệnh của Shell và Windows Batch, đồng thời còn chạy được các mã lệnh của Apache Ant, Maven, Gradle... Người sáng tạo ra Jenkins là Kohsuke Kawaguchi.[3]. Phát hành theo giấy phép MIT nên Jenkins là phần mềm miễn phí.[4]
 
+Việc kích hoạt build dự án phần mềm bằng Jenkins có thể được thực hiện bằng nhiều cách: dựa theo các lần commit trên mã nguồn, theo các khoảng thời gian, kích hoạt qua các URL, kích hoạt sau khi các job khác được build,...
+ 
 **2 cài đặt jenkins centos7**
+
+Prerequisites
+Minimum hardware requirements:
+
+256 MB of RAM
+
+1 GB of drive space (although 10 GB is a recommended minimum if running Jenkins as a Docker container)
+
+Recommended hardware configuration for a small team:
+
+1 GB+ of RAM
+
+50 GB+ of drive space
+
+Software requirements:
+
+Java: see the Java Requirements page
+
+Web browser: see the Web Browser Compatibility page
+
+
 
 - Trước khi cài jenkin, cần phải cài java vì jenkins chạy trên nên java
 
@@ -286,6 +310,14 @@ Branch Specifier (blank for 'any') : $BUILD gọi đển biến **Name** bạn v
 
 Build when a change is pushed to BitBucket. ý nghĩ của nó là mỗi khi có commit thì jenkins sẽ từ động buil và deploy
 
+**_chú ý: muốn sử dụng tính này năng thì bạn cần cấu hình webhook trên github và server jenkins của bạn phải được public ra ngoài.**_
+
+tham khảo cấu hình webhook:
+
+https://dzone.com/articles/adding-a-github-webhook-in-your-jenkins-pipeline
+
+
+
 **Build Environment**
 
 Send files or execute commands over SSH before the build starts 
@@ -330,9 +362,7 @@ cuối cùng là **SAVE**
 Vậy là đã cấu hình hoàn tất giờ chạy buil để test thành quả thôi. :D
 
 
-
-
-
+Tài liệu tham khảo: https://vi.wikipedia.org/wiki/Jenkins_(ph%E1%BA%A7n_m%E1%BB%81m)
 
 
 
