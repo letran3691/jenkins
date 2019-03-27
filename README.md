@@ -16,15 +16,12 @@
 
 **1 Tổng quan jenkins**
 
-    Jenkins là một phần mềm tự động hóa, mã nguồn mở và viết bằng Java. Dự án được tách ra từ dự án ban đầu là Hudson, sau khi xảy ra sự tranh chấp với Oracle.
-
-    Jenkins giúp tự động hóa các quy trình trong phát triển phần mềm, hiện nay được gọi theo thuật ngữ Tích hợp liên tục, và còn được dùng đến trong việc Phân phối liên tục. Jenkins là một phần mềm dạng server, chạy trên nền servlet với sự hỗ trợ của Apache Tomcat. Nó hỗ trợ hầu hết các phần mềm quản lý mã nguồn phổ biến hiện nay như Git, Subversion, Mercurial, ClearCase... Jenkins cũng hỗ trợ cả các mã lệnh của Shell và Windows Batch, đồng thời còn chạy được các mã lệnh của Apache Ant, Maven, Gradle... Người sáng tạo ra Jenkins là Kohsuke Kawaguchi.[3]. Phát hành theo giấy phép MIT nên Jenkins là phần mềm miễn phí.[4]
-
-    Việc kích hoạt build dự án phần mềm bằng Jenkins có thể được thực hiện bằng nhiều cách: dựa theo các lần commit trên mã nguồn, theo các khoảng thời gian, kích hoạt qua các URL, kích hoạt sau khi các job khác được build,...
+   - Jenkins là một phần mềm tự động hóa, mã nguồn mở và viết bằng Java. Dự án được tách ra từ dự án ban đầu là Hudson, sau khi xảy ra sự tranh chấp với Oracle.
+   Jenkins giúp tự động hóa các quy trình trong phát triển phần mềm, hiện nay được gọi theo thuật ngữ Tích hợp liên tục, và còn được dùng đến trong việc Phân phối liên tục. Jenkins là một phần mềm dạng server, chạy trên nền servlet với sự hỗ trợ của Apache Tomcat. Nó hỗ trợ hầu hết các phần mềm quản lý mã nguồn phổ biến hiện nay như Git, Subversion, Mercurial, ClearCase... Jenkins cũng hỗ trợ cả các mã lệnh của Shell và Windows Batch, đồng thời còn chạy được các mã lệnh của Apache Ant, Maven, Gradle... Người sáng tạo ra Jenkins là Kohsuke Kawaguchi.[3]. Phát hành theo giấy phép MIT nên Jenkins là phần mềm miễn phí.Việc kích hoạt build dự án phần mềm bằng Jenkins có thể được thực hiện bằng nhiều cách: dựa theo các lần commit trên mã nguồn, theo các khoảng thời gian, kích hoạt qua các URL, kích hoạt sau khi các job khác được build,...
  
 **2 cài đặt jenkins centos7**
 
-   **Prerequisites**
+  - **Prerequisites**
 
     Minimum hardware requirements:
 
@@ -123,13 +120,13 @@ Nhập đầy đủ các thông tin tài khoản
 
 Quá trình cài đặt jenkins đã hoàn tất.
 
-** cài đặt 1 vài plugin cần thiết**
+- **Cài đặt 1 vài plugin cần thiết**
 	
-    Role-based Authorization Strategy (dùng để phần quyền cho từng jobs)
+   - Role-based Authorization Strategy (dùng để phần quyền cho từng jobs)
 
-    Email Extension Template Plugin (dùng để gửi mail sau khi buil vào deploy)
+   - Email Extension Template Plugin (dùng để gửi mail sau khi buil vào deploy)
 
-    Promoted Builds (dùng để đánh dấu các phiên bản buil khá có ích khi muốn revert lại các bạn build)
+   - Promoted Builds (dùng để đánh dấu các phiên bản buil khá có ích khi muốn revert lại các bạn build)
 
 
     http://jenkins.local:8080/pluginManager/
@@ -160,7 +157,7 @@ Chọn yes
 
 - Từ memu chính chọn  Manage Jenkins >> Configure Global Security >> Project-based Matrix Authorization Strategy
 
-    http://jenkins.local:8080/configureSecurity/
+        http://jenkins.local:8080/configureSecurity/
 
 ![Selection_008](https://user-images.githubusercontent.com/19284401/55063911-97ec8280-50ab-11e9-98f4-634ae70fa790.png)
 
@@ -172,7 +169,7 @@ Chọn yes
 
 Một trang mới sẽ hiện ra
 
-Nhập tên cho jobs và chọn type rồi click ok
+- Nhập tên cho jobs và chọn type rồi click ok
 
 ![Selection_041](https://user-images.githubusercontent.com/19284401/55057885-0f66e580-509d-11e9-8c26-a01e146181e7.png)
 
