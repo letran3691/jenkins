@@ -75,7 +75,7 @@ thay vào đó là thư mục mới VD: JENKINS_HOME="/data" (hãy chắc chắn
 
 - start và enable jenkins
 
-systemctl start jenkins && systemctl enbale jenkins
+systemctl start jenkins && systemctl enable jenkins
 
 
 - reboot lại hệ thống

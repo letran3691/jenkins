@@ -18,5 +18,5 @@ yum -y install jenkins
 
 sleep 2
 echo "start jenkins and reboot host"
-systemctl start jenkins && systemctl enbale jenkins && reboot
+systemctl start jenkins && systemctl enable jenkins && reboot
 
