@@ -1,20 +1,19 @@
-1 Tổng quan jenkins
+## Mục Lục
 
-2 cài đặt jenkins
+### [ 1. Tổng quan jenkins ](#1)
 
-3 cài đặt 1 vài plugin cần thiết
-
-4 Tạo User, quản lý Role cho các User
-
-5 Tạo và cấu hình Job
-
-6 Kết hợp Jenkins với GIT
-
-7 Automated Deployment
-
-8 alert mail
-
-**1 Tổng quan jenkins**
+### [ 2. Cài đặt jenkins ](#2)
+    
+   [ 2.1 Cấu hình jenkins ](#2.1)
+   
+   [ 2.2 Cài đặt 1 vài plugin cần thiết ](#2.2)
+   
+   [ 2.3 Tạo User, quản lý Role cho các User ](#2.3)
+   
+   [ 2.4 Tạo và cấu hình Job ](#2.4)
+   
+   [ 2.5 Kết hợp Jenkins với GIT, Automated Deployment, Alert mail ](#2.5)
+### <a name="1"><a/>1 Tổng quan jenkins
 
 Jenkins là một phần mềm tự động hóa, mã nguồn mở và viết bằng Java. Dự án được tách ra từ dự án ban đầu là Hudson, sau khi xảy ra sự tranh chấp với Oracle.
 
@@ -22,9 +21,9 @@ Jenkins giúp tự động hóa các quy trình trong phát triển phần mềm
 
 Việc kích hoạt build dự án phần mềm bằng Jenkins có thể được thực hiện bằng nhiều cách: dựa theo các lần commit trên mã nguồn, theo các khoảng thời gian, kích hoạt qua các URL, kích hoạt sau khi các job khác được build,...
  
-**2 cài đặt jenkins centos7**
+### <a name="2"><a/>2 cài đặt jenkins centos7
 
-Prerequisites
+**Prerequisites**
 
 Minimum hardware requirements:
 
@@ -89,7 +88,7 @@ firewall-cmd --permanent --zone=public --add-port=8080/tcp
 firewall-cmd --reload
 
 
-- **SETUP JENKINS**
+#### <a name="2.1"><a/> 2.1 Cấu hình jenkins
 
     http://your_ip_or_domain:8080
    
@@ -125,7 +124,7 @@ nhập đầy đủ các thông tin tài khoản
 
 quá trình cài đặt jenkins đã hoàn tất.
 
-** cài đặt 1 vài plugin cần thiết**
+### <a name="2.2"><a/> 2.2 Cài đặt 1 vài plugin cần thiết
 	
 Role-based Authorization Strategy (dùng để phần quyền cho từng jobs)
 
@@ -152,7 +151,7 @@ cài đặt xong plugin muốn restart lại jenkins
 chọn yes
 
 
-**4 Tạo User, quản lý Role cho các User**
+### <a name="2.3"><a/>2.3 Tạo User, quản lý Role cho các User
 
 http://jenkins.local:8080/securityRealm/addUser
 
@@ -166,7 +165,7 @@ http://jenkins.local:8080/configureSecurity/
 
 ![Selection_008](https://user-images.githubusercontent.com/19284401/55063911-97ec8280-50ab-11e9-98f4-634ae70fa790.png)
 
-**5 Tạo và cấu hình Job**
+### <a name="2.4"><a/>2.4 Tạo và cấu hình Job
 
 Từ menu chính chọn **New Item**
 
@@ -214,7 +213,7 @@ như vậy là build thành công.
 
 giờ chúng ta nâng cao lên 1 chút đó là cấu hình buil và deploy từ github
 
-**6 + 7 + 8 Kết hợp Jenkins với GIT && Automated Deployment && alert mail**
+### <a name="2.5"><a/> Kết hợp Jenkins với GIT && Automated Deployment && alert mail
 
 Trước khi bắt đầu bạn cần cài đặt git plugin (nếu chưa có) 
 
