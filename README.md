@@ -4,15 +4,15 @@
 
 ### [2. Cài đặt jenkins](#2)
     
-   [2.1 Cấu hình jenkins](#2.1)
+   - [2.1 Cấu hình jenkins](#2.1)
    
-   [2.2 Cài đặt 1 vài plugin cần thiết](#2.2)
+   - [2.2 Cài đặt 1 vài plugin cần thiết](#2.2)
    
-   [2.3 Tạo User, quản lý Role cho các User](#2.3)
+   - [2.3 Tạo User, quản lý Role cho các User](#2.3)
    
-   [2.4 Tạo và cấu hình Job](#2.4)
+   - [2.4 Tạo và cấu hình Job](#2.4)
    
-   [2.5 Kết hợp Jenkins với GIT, Automated Deployment, Alert mail](#2.5)
+   - [2.5 Kết hợp Jenkins với GIT, Automated Deployment, Alert mail](#2.5)
    
 ### <a name="1"><a/>1 Tổng quan jenkins
 
