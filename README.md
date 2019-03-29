@@ -214,9 +214,9 @@ như vậy là build thành công.
 
 giờ chúng ta nâng cao lên 1 chút đó là cấu hình buil và deploy từ github
 
-### <a name="2.5"><a/> Kết hợp Jenkins với GIT && Automated Deployment && alert mail
+### <a name="2.5"><a/>2.5 Kết hợp Jenkins với GIT && Automated Deployment && alert mail
 
-Trước khi bắt đầu bạn cần cài đặt git plugin (nếu chưa có) 
+Trước khi bắt đầu bạn cần cài đặt git plugin (nếu chưa có)
 
 cài đặt plugin Publish over SSH 
 
