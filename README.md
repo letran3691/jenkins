@@ -70,7 +70,7 @@ vi /etc/sysconfig/jenkins
 ![Selection_029](https://user-images.githubusercontent.com/19284401/55050886-90b27e00-5085-11e9-87c3-b345adddaae0.png)
 
 
-thay vào đó là thư mục mới VD: JENKINS_HOME="/data" (hãy chắc chắn trong máy của bạn đã có thư mục data)
+thay vào đó là thư mục mới VD: JENKINS_HOME="/data" (hãy chắc chắn trong máy của bạn đã có thư mục data, và nhớ phân quyền cho thư mục đó nha **chown -R jenkins. /data**)
 
 
 - start và enable jenkins
